@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
+    fontFamily: {
+      valentine: ["Valentine"],
+    },
     extend: {
-      fontFamily: {
-        valentine: ["Valentine"],
-      },
       animation: {
         float: "floatUp 10s ease-in-out infinite",
       },

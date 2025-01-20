@@ -2,11 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "Valentine";
-    src: url(".\assets\Valentine.otf") format("opentype");
-  }
+@font-face {
+  font-family: "Valentine";
+  src: url(".\assets\Valentine.otf") format("opentype");
 }
 
 :root {
