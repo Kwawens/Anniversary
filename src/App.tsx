@@ -45,13 +45,13 @@ function App() {
       } else {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
         );
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         setTimeLeft(
-          `${formatTime(days, "day")}, ${formatTime(hours, "hour")}, ${formatTime(minutes, "minute")}, and ${formatTime(seconds, "second")}`
+          `${formatTime(days, "day")}, ${formatTime(hours, "hour")}, ${formatTime(minutes, "minute")}, and ${formatTime(seconds, "second")}`,
         );
       }
     }, 1000);
@@ -69,24 +69,41 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Play the audio after the component mounts
-    const timeout = setTimeout(() => {
+    // Function to attempt playing audio
+    const playAudio = () => {
       if (audioRef.current) {
-        audioRef.current.play();
-        audioRef.current.volume = 0.5;
+        audioRef.current
+          .play()
+          .then(() => {
+            console.log("Audio is playing successfully.");
+          })
+          .catch((_error) => {
+            console.warn("Retrying audio playback...");
+          });
       }
-    }, 500); // Wait 500ms before playing audio to avoid autoplay blocking
+    };
 
-    return () => clearTimeout(timeout);
+    // Retry playing the audio every 500ms until it works
+    const retryInterval = setInterval(() => {
+      if (audioRef.current && !audioRef.current.paused) {
+        clearInterval(retryInterval); // Stop retrying once audio starts playing
+      } else {
+        playAudio();
+      }
+    }, 500);
+
+    playAudio(); // Initial attempt to play immediately
+
+    return () => clearInterval(retryInterval);
   }, []);
 
   return (
-    <div className="relative flex justify-center items-center h-screen overflow-hidden">
+    <div className="relative flex h-screen items-center justify-center overflow-hidden">
       <audio ref={audioRef} src={bgMusic} loop />
-      <h1 className="text-white font-bold font-valentine text-4xl">
+      <h1 className="font-valentine text-4xl font-bold text-white">
         {timeLeft}
       </h1>
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full">
         {hearts}
       </div>
     </div>
