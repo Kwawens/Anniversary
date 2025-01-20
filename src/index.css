@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Valentine";
-  src: url("assets\Valentine.otf") format("opentype");
+  src: url("./assets/Valentine.otf") format("opentype");
 }
 
 :root {

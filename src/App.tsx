@@ -72,6 +72,7 @@ function App() {
     // Function to attempt playing audio
     const playAudio = () => {
       if (audioRef.current) {
+        audioRef.current.volume = 0.5;
         audioRef.current
           .play()
           .then(() => {
@@ -86,6 +87,7 @@ function App() {
     // Retry playing the audio every 500ms until it works
     const retryInterval = setInterval(() => {
       if (audioRef.current && !audioRef.current.paused) {
+        audioRef.current.volume = 0.5;
         clearInterval(retryInterval); // Stop retrying once audio starts playing
       } else {
         playAudio();
