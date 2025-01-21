@@ -34,10 +34,8 @@ const Heart = () => {
 
 const LetterModal = ({
   showModal,
-  closeModal,
 }: {
   showModal: boolean;
-  closeModal: () => void;
 }) => {
   return (
     <div
@@ -110,10 +108,6 @@ function App() {
   const [hasEnded, setHasEnded] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false); // Track if modal should be visible
   const navigate = useNavigate();
-
-  const closeModal = () => {
-    setIsModalVisible(false); // Close the modal
-  };
 
   useEffect(() => {
     if (!isOpen) return;
@@ -278,7 +272,7 @@ function App() {
       )}
 
       {/* Show the letter modal */}
-      <LetterModal showModal={isModalVisible} closeModal={closeModal} />
+      <LetterModal showModal={isModalVisible} />
     </div>
   );
 }
