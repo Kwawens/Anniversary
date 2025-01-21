@@ -7,8 +7,7 @@ import firework3 from "./assets/firework3.mp3";
 import paraluman from "./assets/Paraluman.mp3";
 import { Fireworks } from "@fireworks-js/react";
 
-const targetDate = new Date("January 21, 2025 20:55:00").getTime();
-// const targetDate = new Date("January 21, 2025 22:24:00").getTime();
+const targetDate = new Date("January 21, 2025 21:30:00").getTime();
 
 const formatTime = (time: number, unit: string) => {
   return `${time} ${unit}${time > 1 ? "s" : ""}`;
