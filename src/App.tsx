@@ -6,7 +6,6 @@ import firework2 from "./assets/firework2.mp3";
 import firework3 from "./assets/firework3.mp3";
 import { Fireworks } from "@fireworks-js/react";
 
-// Target date
 const targetDate = new Date("January 21, 2025 22:24:00").getTime();
 
 const formatTime = (time: number, unit: string) => {
@@ -33,6 +32,36 @@ const Heart = () => {
   );
 };
 
+const LetterModal = ({
+  showModal,
+  closeModal,
+}: {
+  showModal: boolean;
+  closeModal: () => void;
+}) => {
+  return (
+    <div
+      className={`fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-1000 ${
+        showModal ? "opacity-100" : "opacity-0"
+      }`}
+      style={{
+        pointerEvents: showModal ? "auto" : "none", // Prevent interactions when not visible
+      }}
+    >
+      <div className="max-w-lg rounded-lg bg-white text-center shadow-xl lg:p-[6rem]">
+        <h2 className="mb-4 text-xl font-bold">A Special Message for You!</h2>
+        <p className="text-lg">Happy 1st Anniversary, my love! 🥰</p>
+        <button
+          onClick={closeModal}
+          className="mt-4 rounded-lg bg-red-500 px-4 py-2 text-white"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [timeLeft, setTimeLeft] = useState<string>("");
   const [hearts, setHearts] = useState<JSX.Element[]>([]);
@@ -40,15 +69,18 @@ function App() {
   const [heartIntervalTime, setHeartIntervalTime] = useState(3000);
   const [isOpen, setIsOpen] = useState(false);
   const [showFireworks, setShowFireworks] = useState(false);
-  const [hasEnded, setHasEnded] = useState(false); // Added state to track if the timer has ended
+  const [hasEnded, setHasEnded] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false); // Track if modal should be visible
+  const navigate = useNavigate();
 
-  const navigate = useNavigate(); // For navigation
+  const closeModal = () => {
+    setIsModalVisible(false); // Close the modal
+  };
 
   useEffect(() => {
     if (!isOpen) return;
 
     if (hasEnded) {
-      // Stop the music when the timer ends
       audio.pause();
       audio.currentTime = 0;
       return;
@@ -61,7 +93,7 @@ function App() {
       .play()
       .then(() => {
         setTimeout(() => {
-          audio.volume = 0.5; // Gradually increase the volume
+          audio.volume = 0.5;
         }, 1000);
       })
       .catch((err) => console.error("Audio playback error:", err));
@@ -70,7 +102,7 @@ function App() {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, [audio, isOpen, hasEnded]); // Listen for hasEnded
+  }, [audio, isOpen, hasEnded]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -81,15 +113,14 @@ function App() {
 
       if (distance <= 0) {
         setTimeLeft("HAPPY 1ST ANNIVERSARY LOVEEE!! 🥰✨");
-        setHasEnded(true); // Mark the timer as ended
+        setHasEnded(true);
         clearInterval(interval);
 
         setShowFireworks(true);
 
-        // Navigate to Flower.tsx when time is up
         setTimeout(() => {
-          navigate("/flower");
-        }, 30000); // Delay before navigating
+          // setIsModalVisible(true); // Show modal after 30 seconds
+        }, 1);
       } else {
         const hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
@@ -126,7 +157,7 @@ function App() {
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
-          className="font-naturaly rounded-lg bg-red-500 px-5 py-3 text-xl font-bold text-white transition hover:bg-red-600"
+          className="rounded-lg bg-red-500 px-5 py-3 font-naturaly text-xl font-bold text-white transition hover:bg-red-600"
         >
           Click Me! 😉
         </button>
@@ -141,7 +172,6 @@ function App() {
         </>
       )}
 
-      {/* Show Fireworks when time is up */}
       {showFireworks && (
         <Fireworks
           options={{
@@ -150,7 +180,7 @@ function App() {
             acceleration: 1.05,
             friction: 0.97,
             gravity: 1.5,
-            particles: 50 + Math.floor(Math.random() * 100), // Randomize particle count
+            particles: 50 + Math.floor(Math.random() * 100),
             traceLength: 3,
             traceSpeed: 10,
             explosion: 5,
@@ -204,10 +234,13 @@ function App() {
             left: 0,
             width: "100%",
             height: "100%",
-            zIndex: 1000,
+            zIndex: 1,
           }}
         />
       )}
+
+      {/* Show the letter modal */}
+      <LetterModal showModal={isModalVisible} closeModal={closeModal} />
     </div>
   );
 }

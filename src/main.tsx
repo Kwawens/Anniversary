@@ -3,17 +3,12 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
-import Flower from "./Flower.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/Valentines/",
+    path: "/Anniversary/",
     element: <App />,
     errorElement: <div>404 not found</div>,
-  },
-  {
-    path: "/Valentines/flower",
-    element: <Flower />,
   },
 ]);
 
