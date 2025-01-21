@@ -48,7 +48,7 @@ const LetterModal = ({ showModal }: { showModal: boolean }) => {
 
         {/* Main content in the center, scrollable */}
         <div
-          className="mx-auto my-2 max-h-[30vh] overflow-y-auto text-left font-naturaly text-sm" // Apply max-height and scroll
+          className="my-2 max-h-[30vh] overflow-y-auto text-left font-naturaly text-sm" // Apply max-height and scroll
         >
           {/* Message content here */}
           <p>
