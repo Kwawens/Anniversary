@@ -6,6 +6,10 @@
   font-family: "Valentine";
   src: url("./assets/Valentine.otf") format("opentype");
 }
+@font-face {
+  font-family: "Naturaly";
+  src: url("./assets/Naturaly.otf") format("opentype");
+}
 
 :root {
   background-color: #0b1522;

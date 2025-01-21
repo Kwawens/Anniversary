@@ -7,12 +7,12 @@ import Flower from "./Flower.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Valentines/",
     element: <App />,
-    errorElement: <App />,
+    errorElement: <div>404 not found</div>,
   },
   {
-    path: "/",
+    path: "/Valentines/flower",
     element: <Flower />,
   },
 ]);
@@ -20,5 +20,5 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
