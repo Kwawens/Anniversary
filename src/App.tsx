@@ -173,11 +173,10 @@ function App() {
       if (distance <= 0) {
         setTimeLeft("HAPPY 1ST ANNIVERSARY LOVEEE!! 🥰✨");
         clearInterval(interval);
-
+        setHasEnded(true);
         setShowFireworks(true);
 
         setTimeout(() => {
-          setHasEnded(true);
           setIsModalVisible(true); // Show modal after 30 seconds
         }, 10000);
       } else {
