@@ -6,7 +6,7 @@ import firework2 from "./assets/firework2.mp3";
 import firework3 from "./assets/firework3.mp3";
 import { Fireworks } from "@fireworks-js/react";
 
-const targetDate = new Date("January 21, 2025 22:24:00").getTime();
+const targetDate = new Date("January 20, 2025 22:24:00").getTime();
 
 const formatTime = (time: number, unit: string) => {
   return `${time} ${unit}${time > 1 ? "s" : ""}`;
@@ -41,22 +41,60 @@ const LetterModal = ({
 }) => {
   return (
     <div
-      className={`fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-1000 ${
-        showModal ? "opacity-100" : "opacity-0"
-      }`}
+      className={`fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-1000 ${showModal ? "opacity-100" : "opacity-0"}`}
       style={{
         pointerEvents: showModal ? "auto" : "none", // Prevent interactions when not visible
       }}
     >
-      <div className="max-w-lg rounded-lg bg-white text-center shadow-xl lg:p-[6rem]">
-        <h2 className="mb-4 text-xl font-bold">A Special Message for You!</h2>
-        <p className="text-lg">Happy 1st Anniversary, my love! 🥰</p>
-        <button
-          onClick={closeModal}
-          className="mt-4 rounded-lg bg-red-500 px-4 py-2 text-white"
+      <div className="max-w-lg rounded-lg bg-white p-[4rem] text-center shadow-xl">
+        <h2 className="w-max translate-x-[-30px] translate-y-[-30px] font-naturaly text-2xl">
+          Dear My Love,
+        </h2>
+        <div
+          className="max-h-[60vh] overflow-y-auto text-left font-naturaly text-lg" // Apply max-height and scroll
+          style={{
+            paddingRight: "1rem", // Optional to add a bit of spacing on the right side
+          }}
         >
-          Close
-        </button>
+          {/* Message content here */}
+          <p>
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...
+          </p>
+        </div>
+        <h2 className="translate-x-[150px] translate-y-[50px] font-naturaly text-2xl">
+          From Your Love,
+          <h2 className="translate-x-[-30px]">Clarence Dale Francisco</h2>
+        </h2>
       </div>
     </div>
   );
@@ -119,7 +157,7 @@ function App() {
         setShowFireworks(true);
 
         setTimeout(() => {
-          // setIsModalVisible(true); // Show modal after 30 seconds
+          setIsModalVisible(true); // Show modal after 30 seconds
         }, 1);
       } else {
         const hours = Math.floor(
