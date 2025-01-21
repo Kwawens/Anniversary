@@ -32,11 +32,7 @@ const Heart = () => {
   );
 };
 
-const LetterModal = ({
-  showModal,
-}: {
-  showModal: boolean;
-}) => {
+const LetterModal = ({ showModal }: { showModal: boolean }) => {
   return (
     <div
       className={`fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-1000 ${showModal ? "opacity-100" : "opacity-0"}`}
@@ -44,15 +40,15 @@ const LetterModal = ({
         pointerEvents: showModal ? "auto" : "none", // Prevent interactions when not visible
       }}
     >
-      <div className="max-w-lg rounded-lg bg-white p-[4rem] text-center shadow-xl">
-        <h2 className="w-max translate-x-[-30px] translate-y-[-30px] font-naturaly text-2xl">
+      <div className="relative max-w-lg rounded-lg bg-white p-[4rem] text-center shadow-xl">
+        {/* "Dear My Love" at the top left */}
+        <h2 className="absolute left-4 top-4 font-naturaly text-xl">
           Dear My Love,
         </h2>
+
+        {/* Main content in the center, scrollable */}
         <div
-          className="max-h-[60vh] overflow-y-auto text-left font-naturaly text-lg" // Apply max-height and scroll
-          style={{
-            paddingRight: "1rem", // Optional to add a bit of spacing on the right side
-          }}
+          className="mx-auto my-2 max-h-[30vh] overflow-y-auto text-left font-naturaly text-sm" // Apply max-height and scroll
         >
           {/* Message content here */}
           <p>
@@ -86,13 +82,28 @@ const LetterModal = ({
             ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
             FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
             HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
+            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
+            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
+            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
+            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
+            FIRST ANNIVERSARY LOVE!!! 🥰...
           </p>
         </div>
-        <h2 className="translate-x-[150px] translate-y-[50px] font-naturaly text-2xl">
-          From Your Love,
-          <h2 className="translate-x-[-30px]">Clarence Dale Francisco</h2>
-        </h2>
+
+        {/* "From Your Love" and your name at the bottom right */}
+        <div className="absolute right-4 font-naturaly text-xl">
+          <h2>From Your Love,</h2>
+          <p>Clarence Dale Francisco</p> {/* Add your name below */}
+        </div>
       </div>
     </div>
   );
