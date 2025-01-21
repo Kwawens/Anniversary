@@ -4,9 +4,11 @@ import bgMusic from "./assets/timerBg.mp3";
 import firework1 from "./assets/firework1.mp3";
 import firework2 from "./assets/firework2.mp3";
 import firework3 from "./assets/firework3.mp3";
+import paraluman from "./assets/Paraluman.mp3";
 import { Fireworks } from "@fireworks-js/react";
 
-const targetDate = new Date("January 20, 2025 22:24:00").getTime();
+const targetDate = new Date("January 21, 2025 20:55:00").getTime();
+// const targetDate = new Date("January 21, 2025 22:24:00").getTime();
 
 const formatTime = (time: number, unit: string) => {
   return `${time} ${unit}${time > 1 ? "s" : ""}`;
@@ -40,7 +42,7 @@ const LetterModal = ({ showModal }: { showModal: boolean }) => {
         pointerEvents: showModal ? "auto" : "none", // Prevent interactions when not visible
       }}
     >
-      <div className="relative max-w-lg rounded-lg bg-white p-[4rem] text-center shadow-xl">
+      <div className="relative max-w-lg rounded-lg bg-white px-[2rem] py-[4rem] text-center shadow-xl">
         {/* "Dear My Love" at the top left */}
         <h2 className="absolute left-4 top-4 font-naturaly text-xl">
           Dear My Love,
@@ -48,54 +50,51 @@ const LetterModal = ({ showModal }: { showModal: boolean }) => {
 
         {/* Main content in the center, scrollable */}
         <div
-          className="my-2 max-h-[30vh] overflow-y-auto text-left font-naturaly text-sm" // Apply max-height and scroll
+          className="font-sans mx-0 max-h-[30vh] overflow-y-auto text-left text-sm" // Apply max-height and scroll
         >
           {/* Message content here */}
-          <p>
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰.
-            HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!!
-            🥰...HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY
-            LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰...HAPPY FIRST
-            ANNIVERSARY LOVE!!! 🥰. HAPPY FIRST ANNIVERSARY LOVE!!! 🥰. HAPPY
-            FIRST ANNIVERSARY LOVE!!! 🥰...
+          <p className="indent-4">
+            HAPPY 1ST ANNIVERSARY LOVE!!! 🥰🥰🥰 Thank you love for still being
+            there for me and for us hehe. Sobrang dami na nangyari satin sa loob
+            ng isang taon. Parang last year lang na kinakabahan ako umamin sayo
+            at tinanong mo pa ko kung gusto kita HHWHAHA, plano ko sana umamin
+            sayo after ng semester break kaso napaaga hehe tapos ayon hindi
+            tuloy tayo nakatulog ng maayos HAWHHAHHWHA pero ok lang yon diba
+            hehe 🥰.
+          </p>
+          <br></br>
+          <p className="indent-4">
+            Hindi ko akalain na despite sa lahat ng mga problems and struggles
+            natin together na hinarap at hinaharap ngayon ay hindi pa rin tayo
+            sumusuko sa isa't isa. Yung mga promises natin love, pangako ko sayo
+            na tutuparin ko yon at ibibigay lahat ng best ko upang matupad ko
+            ung mga binitawan kong salita hehhehe. I'm sorry love kung minsan o
+            madalas ay lagi tayo nag aaway o nagkakatampuhan, I know na we're
+            still young and have a lot of things to explore, know and understand
+            kaya I'm trying my best to be not perfect because theres no perfect
+            person but a best person for you and for us hehhehe.{" "}
+          </p>
+          <br></br>
+          <p className="indent-4">
+            Sana love malagpasan na natin ang lahat ng problema natin at hindi
+            na madagdagan ng mas masakit huhu at kung mas masakit man ay wag
+            tayo sumuko sa isa't isa staka sana makilala na tayo ng mga parents
+            natin para makapag-date naman tayo paminsan minsan dibaaa hehhe
+            hindi naman tayo magiging magastos at we can manage our work and
+            money while maintaining academic and our relationship. I super super
+            super super super miss you na loveeeeeeee at sobraaaa sobraaaaaa
+            kitanggg loveeeeeeee hehehhee. Wag ka mawawala sakin love ha at
+            hindi ko talaga kakayanin kahit ilang taon pa yung dumaan huhu.
+          </p>
+          <br></br>
+          <p className="indent-4">
+            ANYWAYSSSSS, I'M LOOKING FORWARD LOVE FOR ANOTHER YEAR 🥰😘. I LOVEE
+            YOUUU LOVEEEE 🥰🥰🥰🥰🥰 AT HAPPY HAPPYYY HAPPYYYY FIRST ANNIVERSARY
+            LOVEEE AS UNOFFICIAL HEHEHE SANA TALAGAAAAAAA SOOONNNNN OFFICIAL
+            NAAAA!!!! AAAAAAAAA I CAN'T WAIT HEHEHEHEHHE LALO NA KAPAG 💍
+            HEHEHEHEHEHEHEHEHE I LOVEEEE YOUUUUUU LOVEEEEEEEE
+            MWAAAAAAAAAAAAAAAAAAAAAAAA 😘😘😘. HAPPYYYY ANNIVERSARY
+            LOVEEEE!!!!!!!!
           </p>
         </div>
 
@@ -119,6 +118,24 @@ function App() {
   const [hasEnded, setHasEnded] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false); // Track if modal should be visible
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isModalVisible) return;
+
+    const paralumanAudio = new Audio(paraluman);
+    paralumanAudio.loop = true;
+    paralumanAudio.volume = 0.5;
+
+    paralumanAudio.currentTime = 212;
+    paralumanAudio.play().catch((err) => {
+      console.error("Paraluman playback error:", err);
+    });
+
+    return () => {
+      paralumanAudio.pause();
+      paralumanAudio.currentTime = 0;
+    };
+  }, [isModalVisible]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -156,14 +173,14 @@ function App() {
 
       if (distance <= 0) {
         setTimeLeft("HAPPY 1ST ANNIVERSARY LOVEEE!! 🥰✨");
-        setHasEnded(true);
         clearInterval(interval);
 
         setShowFireworks(true);
 
         setTimeout(() => {
+          setHasEnded(true);
           setIsModalVisible(true); // Show modal after 30 seconds
-        }, 1);
+        }, 10000);
       } else {
         const hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
