@@ -161,7 +161,7 @@ function App() {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, [audio, isOpen, hasEnded]);
+  }, [audio, isOpen, hasEnded, isModalVisible]);
 
   useEffect(() => {
     if (!isOpen) return;
