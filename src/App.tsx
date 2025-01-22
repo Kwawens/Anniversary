@@ -139,7 +139,7 @@ function App() {
   useEffect(() => {
     if (!isOpen) return;
 
-    if (hasEnded) {
+    if (isModalVisible) {
       audio.pause();
       audio.currentTime = 0;
       return;
@@ -172,8 +172,8 @@ function App() {
 
       if (distance <= 0) {
         setTimeLeft("HAPPY 1ST ANNIVERSARY LOVEEE!! 🥰✨");
-        clearInterval(interval);
         setHasEnded(true);
+        clearInterval(interval);
         setShowFireworks(true);
 
         setTimeout(() => {
